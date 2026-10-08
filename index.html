@@ -3,90 +3,116 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Earn With HBNX</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
 body{
     font-family:Arial,Tahoma,sans-serif;
-    background:#07111f;
-    color:#fff;
+    background:#07111d;
+    color:#ffffff;
     min-height:100vh;
 }
-button,input{font:inherit}
-button{cursor:pointer;border:0}
 
-.container{
-    width:min(1100px,94%);
+button,
+input{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+.header{
+    background:#0c1928;
+    border-bottom:1px solid #20364d;
+    padding:16px;
+}
+
+.header-content{
+    max-width:1100px;
     margin:auto;
-}
-
-header{
-    background:#0b1728;
-    border-bottom:1px solid #1b3048;
-    padding:16px 0;
-    position:sticky;
-    top:0;
-    z-index:10;
-}
-
-.nav{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    gap:15px;
 }
 
 .logo{
     font-size:22px;
     font-weight:bold;
-    color:#35d0ff;
+    color:#28c7f5;
 }
 
-.logo span{color:#fff}
+.logo span{
+    color:#ffffff;
+}
 
-.nav button{
-    background:#15263b;
-    color:#fff;
-    padding:10px 15px;
-    border-radius:10px;
+.header-btn{
+    background:#172a3e;
+    color:#ffffff;
+    border:1px solid #29445d;
+    padding:10px 16px;
+    border-radius:9px;
+}
+
+.container{
+    width:94%;
+    max-width:1100px;
+    margin:auto;
+}
+
+.page{
+    display:none;
+    padding:30px 0;
+}
+
+.page.active{
+    display:block;
 }
 
 .hero{
     text-align:center;
-    padding:55px 15px 35px;
+    padding:45px 10px;
 }
 
 .hero h1{
     font-size:38px;
-    margin-bottom:12px;
+    margin-bottom:15px;
 }
 
-.hero h1 span{color:#35d0ff}
+.hero h1 span{
+    color:#28c7f5;
+}
 
 .hero p{
-    color:#9db0c5;
+    color:#9db0c2;
     line-height:1.8;
 }
 
 .btn{
-    background:#20b8e8;
-    color:#00111a;
+    background:#28c7f5;
+    color:#041019;
+    border:0;
+    border-radius:10px;
     padding:13px 22px;
-    border-radius:11px;
     font-weight:bold;
-    margin-top:20px;
+    margin-top:18px;
 }
 
-.btn:hover{opacity:.9}
-
-.page{display:none}
-.page.active{display:block}
+.btn:hover{
+    opacity:.9;
+}
 
 .card{
-    background:#0d1b2c;
-    border:1px solid #1c344d;
-    border-radius:17px;
+    background:#0d1c2c;
+    border:1px solid #20384f;
+    border-radius:16px;
     padding:20px;
     margin-bottom:18px;
 }
@@ -94,14 +120,901 @@ header{
 .grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:16px;
+    gap:15px;
 }
 
 .stat{
-    background:#101f32;
+    background:#101f31;
+    border:1px solid #20384f;
+    border-radius:14px;
     padding:20px;
-    border-radius:15px;
-    border:1px solid #1c344d;
 }
 
-.stat small{color:#8ea4bb
+.stat small{
+    color:#91a6ba;
+}
+
+.stat strong{
+    display:block;
+    color:#28c7f5;
+    font-size:27px;
+    margin-top:8px;
+}
+
+.form{
+    max-width:430px;
+    margin:30px auto;
+}
+
+.form h2{
+    margin-bottom:18px;
+}
+
+input{
+    width:100%;
+    padding:13px;
+    margin-bottom:10px;
+    background:#07131f;
+    color:white;
+    border:1px solid #29445d;
+    border-radius:9px;
+    outline:none;
+}
+
+input:focus{
+    border-color:#28c7f5;
+}
+
+.form .btn{
+    width:100%;
+}
+
+.link{
+    color:#28c7f5;
+    cursor:pointer;
+}
+
+.notice{
+    background:#102638;
+    border-right:4px solid #28c7f5;
+    padding:13px;
+    border-radius:8px;
+    color:#b8cad9;
+    line-height:1.7;
+    margin-bottom:15px;
+}
+
+.menu{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+    margin:20px 0;
+}
+
+.menu button{
+    background:#0d2033;
+    color:white;
+    border:1px solid #203d57;
+    padding:12px 7px;
+    border-radius:10px;
+}
+
+.menu button:hover{
+    border-color:#28c7f5;
+}
+
+.task{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    padding:14px 0;
+    border-bottom:1px solid #20364c;
+}
+
+.task:last-child{
+    border-bottom:0;
+}
+
+.small-btn{
+    background:#28c7f5;
+    color:#041019;
+    border:0;
+    padding:9px 12px;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.small-btn:disabled{
+    background:#3a4b5c;
+    color:#aeb9c3;
+}
+
+.progress{
+    width:100%;
+    height:10px;
+    background:#182b40;
+    border-radius:20px;
+    overflow:hidden;
+    margin:14px 0;
+}
+
+.progress-bar{
+    height:100%;
+    width:0;
+    background:#28c7f5;
+}
+
+.address{
+    direction:ltr;
+    text-align:center;
+    word-break:break-all;
+    background:#06111c;
+    border:1px solid #29445d;
+    padding:14px;
+    border-radius:10px;
+    color:#28c7f5;
+    margin:15px 0;
+}
+
+.copy-btn{
+    background:#263d55;
+    color:white;
+    border:0;
+    padding:10px 18px;
+    border-radius:9px;
+}
+
+.price{
+    font-size:34px;
+    color:#28c7f5;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.wheel{
+    width:190px;
+    height:190px;
+    margin:25px auto;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:conic-gradient(
+        #28c7f5 0 45deg,
+        #172f49 45deg 90deg,
+        #28c7f5 90deg 135deg,
+        #172f49 135deg 180deg,
+        #28c7f5 180deg 225deg,
+        #172f49 225deg 270deg,
+        #28c7f5 270deg 315deg,
+        #172f49 315deg
+    );
+    border:8px solid #0a1725;
+    transition:transform 3s ease;
+    font-weight:bold;
+}
+
+.center{
+    text-align:center;
+}
+
+footer{
+    text-align:center;
+    color:#71869a;
+    padding:35px 10px;
+    font-size:13px;
+}
+
+@media(max-width:700px){
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .menu{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="header-content">
+        <div class="logo">
+            Earn With <span>HBNX</span>
+        </div>
+
+        <button class="header-btn" onclick="openPage('login')">
+            دخول
+        </button>
+    </div>
+</header>
+
+<main class="container">
+
+<!-- HOME -->
+<section id="home" class="page active">
+
+    <div class="hero">
+
+        <h1>
+            Earn With <span>HBNX</span>
+        </h1>
+
+        <p>
+            منصة تجريبية للمهام والمكافآت الرقمية.
+            <br>
+            أنشئ حسابك وابدأ تجربة لوحة التحكم.
+        </p>
+
+        <button class="btn" onclick="openPage('register')">
+            إنشاء حساب
+        </button>
+
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>📺 الإعلانات</h3>
+            <p style="color:#9db0c2;margin-top:8px">
+                مهام إعلانية تجريبية.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🎡 عجلة الحظ</h3>
+            <p style="color:#9db0c2;margin-top:8px">
+                عجلة مكافآت يومية تجريبية.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>👥 الإحالات</h3>
+            <p style="color:#9db0c2;margin-top:8px">
+                نظام دعوة تجريبي.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="notice">
+        <b>تنبيه:</b>
+        هذه نسخة تجريبية. الأرصدة والمكافآت غير حقيقية وغير قابلة للسحب.
+    </div>
+
+</section>
+
+
+<!-- REGISTER -->
+<section id="register" class="page">
+
+    <div class="card form">
+
+        <h2>إنشاء حساب</h2>
+
+        <input id="registerName" type="text" placeholder="الاسم">
+
+        <input id="registerEmail" type="email" placeholder="البريد الإلكتروني">
+
+        <input id="registerPassword" type="password" placeholder="كلمة المرور">
+
+        <input id="registerInvite" type="text" placeholder="كود الدعوة">
+
+        <button class="btn" onclick="registerUser()">
+            إنشاء الحساب
+        </button>
+
+        <p style="text-align:center;margin-top:18px;color:#91a6ba">
+            لديك حساب؟
+            <span class="link" onclick="openPage('login')">
+                تسجيل الدخول
+            </span>
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- LOGIN -->
+<section id="login" class="page">
+
+    <div class="card form">
+
+        <h2>تسجيل الدخول</h2>
+
+        <input id="loginEmail" type="email" placeholder="البريد الإلكتروني">
+
+        <input id="loginPassword" type="password" placeholder="كلمة المرور">
+
+        <button class="btn" onclick="loginUser()">
+            دخول
+        </button>
+
+        <p style="text-align:center;margin-top:18px;color:#91a6ba">
+            ليس لديك حساب؟
+            <span class="link" onclick="openPage('register')">
+                إنشاء حساب
+            </span>
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- DASHBOARD -->
+<section id="dashboard" class="page">
+
+    <div class="hero" style="padding-bottom:25px">
+
+        <h1>لوحة التحكم</h1>
+
+        <p id="welcomeText"></p>
+
+    </div>
+
+    <div class="grid">
+
+        <div class="stat">
+            <small>الرصيد التجريبي</small>
+            <strong id="balanceValue">$0.00</strong>
+        </div>
+
+        <div class="stat">
+            <small>إعلانات اليوم</small>
+            <strong id="adsValue">0 / 30</strong>
+        </div>
+
+        <div class="stat">
+            <small>الإحالات</small>
+            <strong id="refsValue">0</strong>
+        </div>
+
+    </div>
+
+    <div class="menu">
+
+        <button onclick="openPage('dashboard')">📊 الرئيسية</button>
+
+        <button onclick="openPage('plan')">📅 الخطة</button>
+
+        <button onclick="openPage('ads')">📺 الإعلانات</button>
+
+        <button onclick="openPage('wheel')">🎡 العجلة</button>
+
+        <button onclick="openPage('referrals')">👥 الدعوات</button>
+
+        <button onclick="openPage('deposit')">💳 الإيداع</button>
+
+        <button onclick="openPage('withdraw')">💰 السحب</button>
+
+        <button onclick="logout()">🚪 خروج</button>
+
+    </div>
+
+    <div class="card">
+
+        <h2>تقدم الإعلانات</h2>
+
+        <div class="progress">
+            <div id="dailyProgress" class="progress-bar"></div>
+        </div>
+
+        <p id="progressText" style="color:#91a6ba">
+            0%
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- PLAN -->
+<section id="plan" class="page">
+
+    <div class="card center">
+
+        <h2>📅 الخطة الأسبوعية</h2>
+
+        <p style="color:#9db0c2">
+            هذه الخطة تجريبية فقط.
+        </p>
+
+        <div class="price">
+            $30
+        </div>
+
+        <p>مدة الخطة: 7 أيام</p>
+
+        <p style="margin-top:8px">
+            المكافأة اليومية التجريبية: $0.50
+        </p>
+
+        <button class="btn" onclick="activatePlan()">
+            تفعيل الخطة التجريبية
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ADS -->
+<section id="ads" class="page">
+
+    <div class="card">
+
+        <h2>📺 الإعلانات اليومية</h2>
+
+        <div class="notice">
+            يمكنك تجربة 30 إعلانًا تجريبيًا يوميًا.
+        </div>
+
+        <div id="adsContainer"></div>
+
+    </div>
+
+</section>
+
+
+<!-- WHEEL -->
+<section id="wheel" class="page">
+
+    <div class="card center">
+
+        <h2>🎡 عجلة الحظ</h2>
+
+        <p style="color:#9db0c2">
+            تجربة عجلة الحظ اليومية.
+        </p>
+
+        <div id="wheelElement" class="wheel">
+            HBNX
+        </div>
+
+        <button id="spinButton" class="btn" onclick="spinWheel()">
+            لف العجلة
+        </button>
+
+        <h3 id="wheelResult" style="margin-top:20px"></h3>
+
+    </div>
+
+</section>
+
+
+<!-- REFERRALS -->
+<section id="referrals" class="page">
+
+    <div class="card center">
+
+        <h2>👥 دعوة الأصدقاء</h2>
+
+        <p style="color:#9db0c2">
+            كود الدعوة التجريبي الخاص بك:
+        </p>
+
+        <div class="address">
+            HBNX-DEMO
+        </div>
+
+        <button class="copy-btn" onclick="copyText('HBNX-DEMO')">
+            نسخ الكود
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- DEPOSIT -->
+<section id="deposit" class="page">
+
+    <div class="card center">
+
+        <h2>💳 الإيداع</h2>
+
+        <div class="notice">
+            هذه الصفحة تجريبية فقط ولا تنفذ أي تحويل مالي.
+        </div>
+
+        <p>المبلغ التجريبي</p>
+
+        <div class="price">
+            $30 USDT
+        </div>
+
+        <p>الشبكة</p>
+
+        <h3 style="margin-top:8px">
+            BEP-20
+        </h3>
+
+        <div class="address">
+            0x9cd26a1bc7fdf18aeb24471ec136155659e5f4f5
+        </div>
+
+        <button class="copy-btn"
+                onclick="copyText('0x9cd26a1bc7fdf18aeb24471ec136155659e5f4f5')">
+            نسخ العنوان
+        </button>
+
+        <br>
+
+        <button class="btn"
+                onclick="alert('هذه نسخة تجريبية فقط. لم يتم تنفيذ أي تحويل.')">
+            إرسال طلب تجريبي
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- WITHDRAW -->
+<section id="withdraw" class="page">
+
+    <div class="card">
+
+        <h2>💰 السحب</h2>
+
+        <div class="notice">
+            السحب غير متاح في النسخة التجريبية.
+        </div>
+
+        <p>
+            الحد الأدنى التجريبي:
+            <b>$40</b>
+        </p>
+
+        <div class="progress">
+            <div id="withdrawProgress" class="progress-bar"></div>
+        </div>
+
+        <p id="withdrawText" style="color:#91a6ba">
+            $0.00 / $40
+        </p>
+
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+    Earn With HBNX — Demo
+</footer>
+
+
+<script>
+
+var user = null;
+
+var savedUser = localStorage.getItem("HBNX_USER");
+
+if(savedUser){
+    try{
+        user = JSON.parse(savedUser);
+    }catch(e){
+        user = null;
+    }
+}
+
+var defaultData = {
+    balance:0,
+    ads:0,
+    refs:0,
+    wheelUsed:false,
+    plan:false
+};
+
+var data = defaultData;
+
+var savedData = localStorage.getItem("HBNX_DATA");
+
+if(savedData){
+    try{
+        data = JSON.parse(savedData);
+    }catch(e){
+        data = defaultData;
+    }
+}
+
+function saveData(){
+    localStorage.setItem(
+        "HBNX_DATA",
+        JSON.stringify(data)
+    );
+}
+
+function openPage(pageId){
+
+    var pages = document.querySelectorAll(".page");
+
+    pages.forEach(function(page){
+        page.classList.remove("active");
+    });
+
+    var target = document.getElementById(pageId);
+
+    if(target){
+        target.classList.add("active");
+    }
+
+    window.scrollTo(0,0);
+
+    if(pageId === "dashboard"){
+        updateDashboard();
+    }
+
+    if(pageId === "ads"){
+        renderAds();
+    }
+
+    if(pageId === "withdraw"){
+        updateWithdraw();
+    }
+}
+
+function registerUser(){
+
+    var name =
+        document.getElementById("registerName").value.trim();
+
+    var email =
+        document.getElementById("registerEmail").value.trim();
+
+    var password =
+        document.getElementById("registerPassword").value;
+
+    var invite =
+        document.getElementById("registerInvite").value.trim();
+
+    if(name === "" || email === "" || password === ""){
+        alert("يرجى ملء البيانات المطلوبة.");
+        return;
+    }
+
+    user = {
+        name:name,
+        email:email,
+        password:password
+    };
+
+    localStorage.setItem(
+        "HBNX_USER",
+        JSON.stringify(user)
+    );
+
+    data = {
+        balance: invite === "NESBNX10" ? 5 : 0,
+        ads:0,
+        refs:0,
+        wheelUsed:false,
+        plan:false
+    };
+
+    saveData();
+
+    if(invite === "NESBNX10"){
+        alert("تم إنشاء الحساب وإضافة 5$ تجريبية.");
+    }else{
+        alert("تم إنشاء الحساب بنجاح.");
+    }
+
+    openPage("dashboard");
+}
+
+function loginUser(){
+
+    if(!user){
+        alert("لا يوجد حساب. أنشئ حسابًا أولًا.");
+        openPage("register");
+        return;
+    }
+
+    var email =
+        document.getElementById("loginEmail").value.trim();
+
+    var password =
+        document.getElementById("loginPassword").value;
+
+    if(email !== user.email ||
+       password !== user.password){
+
+        alert("البريد الإلكتروني أو كلمة المرور غير صحيحة.");
+        return;
+    }
+
+    openPage("dashboard");
+}
+
+function logout(){
+
+    openPage("home");
+}
+
+function updateDashboard(){
+
+    if(!user){
+        openPage("login");
+        return;
+    }
+
+    document.getElementById("welcomeText").textContent =
+        "مرحبًا " + user.name + " 👋";
+
+    document.getElementById("balanceValue").textContent =
+        "$" + Number(data.balance).toFixed(2);
+
+    document.getElementById("adsValue").textContent =
+        data.ads + " / 30";
+
+    document.getElementById("refsValue").textContent =
+        data.refs;
+
+    var percent =
+        Math.min((data.ads / 30) * 100,100);
+
+    document.getElementById("dailyProgress").style.width =
+        percent + "%";
+
+    document.getElementById("progressText").textContent =
+        Math.round(percent) + "% مكتمل";
+}
+
+function activatePlan(){
+
+    if(data.plan){
+        alert("الخطة التجريبية مفعلة بالفعل.");
+        return;
+    }
+
+    data.plan = true;
+
+    saveData();
+
+    alert("تم تفعيل الخطة التجريبية.");
+    openPage("dashboard");
+}
+
+function renderAds(){
+
+    var container =
+        document.getElementById("adsContainer");
+
+    container.innerHTML = "";
+
+    for(var i=1;i<=30;i++){
+
+        var row =
+            document.createElement("div");
+
+        row.className = "task";
+
+        var completed =
+            i <= data.ads;
+
+        row.innerHTML =
+            "<span>📺 الإعلان التجريبي رقم " + i + "</span>" +
+            "<button class='small-btn' " +
+            (completed ? "disabled" : "") +
+            " onclick='watchAd(" + i + ")'>" +
+            (completed ? "تمت المشاهدة" : "+ $0.50") +
+            "</button>";
+
+        container.appendChild(row);
+    }
+}
+
+function watchAd(number){
+
+    if(number !== data.ads + 1){
+        alert("شاهد الإعلانات بالترتيب.");
+        return;
+    }
+
+    data.ads++;
+
+    data.balance += 0.50;
+
+    saveData();
+
+    renderAds();
+    updateDashboard();
+}
+
+function spinWheel(){
+
+    if(data.wheelUsed){
+        alert("لقد استخدمت العجلة اليوم.");
+        return;
+    }
+
+    var wheel =
+        document.getElementById("wheelElement");
+
+    var button =
+        document.getElementById("spinButton");
+
+    button.disabled = true;
+
+    var reward =
+        Math.round(
+            (0.1 + Math.random() * 1.9) * 100
+        ) / 100;
+
+    wheel.style.transform =
+        "rotate(" +
+        (1440 + Math.floor(Math.random()*360)) +
+        "deg)";
+
+    setTimeout(function(){
+
+        data.wheelUsed = true;
+
+        data.balance += reward;
+
+        saveData();
+
+        document.getElementById("wheelResult")
+            .textContent =
+            "🎉 المكافأة التجريبية: $" +
+            reward.toFixed(2);
+
+    },3000);
+}
+
+function copyText(text){
+
+    if(navigator.clipboard){
+
+        navigator.clipboard.writeText(text)
+        .then(function(){
+            alert("تم النسخ.");
+        })
+        .catch(function(){
+            alert("تعذر النسخ تلقائيًا.");
+        });
+
+    }else{
+
+        alert(text);
+    }
+}
+
+function updateWithdraw(){
+
+    var amount =
+        Math.min(Number(data.balance),40);
+
+    var percent =
+        Math.min((amount / 40) * 100,100);
+
+    document.getElementById("withdrawProgress")
+        .style.width =
+        percent + "%";
+
+    document.getElementById("withdrawText")
+        .textContent =
+        "$" + Number(data.balance).toFixed(2) +
+        " / $40";
+}
+
+if(user){
+    updateDashboard();
+}
+
+</script>
+
+</body>
+</html>
